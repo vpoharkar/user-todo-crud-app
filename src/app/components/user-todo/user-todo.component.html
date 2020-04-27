@@ -1,0 +1,44 @@
+<div class="card text-center">
+    <div class="card-header">
+        <nav class="navbar navbar-light">
+            <p class="h4">USER TODO APPLICATION</p>
+        </nav>
+    </div>
+    <div class="card-body">
+        <div class="card border-info mb-3 offset-md-3" style="max-width: 44rem;">
+            <nav class="navbar navbar-light bg-light">
+                <a class="navbar-brand" href="#">
+                  <img src="assets/images/list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="">
+                  Todos
+                </a>
+              </nav>
+            <div class="card-body text-info" [formGroup]="userTodoForm">
+                <button type="button" class="btn btn-light" (click)="showInput=true;">+ New Task</button>
+                <div class="row todo-input" *ngIf="showInput">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="What needs to be done?" autofocus="" formControlName="userTask" (keyup.enter)="addTodo()">
+                    </div>
+                    <div class="col" *ngIf="showStatusInput && userTodoForm.controls['userTask'].value">
+                        <input type="checkbox" [checked]="newTodo.status" (click)="toggleTodoStatus(newTodo)">
+                        <small id="passwordHelpInline" class="text-muted">
+                            Click to change status to complete
+                        </small>
+                    </div>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let todo of todoList">
+                        <label>
+                            <span class="tasks" (click)="editTodo(todo)">{{todo.task}}</span>
+                            <img src="assets/images/remove-icon.png" width="25" height="25" class="d-inline-block align-top" alt="" (click)="removeTodo(todo)">
+                        </label>
+                        <span *ngIf="todo.status"class="badge badge-success badge-pill">Done</span>
+                        <span *ngIf="!todo.status"class="badge badge-danger badge-pill">pending</span>
+                    </li>
+                  </ul>
+            </div>
+        </div>
+    </div>
+    <div class="card-footer text-muted">
+      Todo list application created using Angular
+    </div>
+</div>

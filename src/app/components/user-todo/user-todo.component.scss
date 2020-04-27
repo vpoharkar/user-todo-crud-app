@@ -1,0 +1,38 @@
+.card {
+    .card-header {
+        padding: 0;
+        background-color: #e3f2fd;
+        .navbar {
+            display: block !important;
+            .h4 {
+                color: cadetblue;
+            }
+        }
+    }
+    .card-body {
+       .border-info {
+           .bg-light {
+               background: cadetblue !important;
+               .navbar-brand {
+                   color: white;
+               }
+           }
+           .text-info {
+               text-align: left;
+               .btn {
+                   color: cadetblue;
+                   margin: 0 0 1rem 0;
+               }
+               .list-group {
+                   margin: 1rem 0 0 0;
+                   .list-group-item {
+                       .tasks {
+                           cursor: pointer;
+                           padding: 0 0.5rem 0 0;
+                       }
+                   }
+               }
+           }
+       } 
+    }
+}

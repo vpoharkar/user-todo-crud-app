@@ -1,0 +1,14 @@
+.todoapp {
+    .main {
+        .todo-list {
+            .view {
+                .todo-complete {
+                    background: green;
+                }
+                .todo-pending {
+                    background: palevioletred;
+                }
+            }
+        }
+    }
+}
