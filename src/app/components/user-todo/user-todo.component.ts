@@ -59,6 +59,9 @@ export class UserTodoComponent implements OnInit {
   removeTodo(todo) {
     this.todoDataService.deleteTodoById(todo.id);
     // clear input
+    if(this.todoList.length === 0) {
+      this.showInput = false;
+    }
     this.newTodo = new Todo();
     this.userTodoForm.controls['userTask'].patchValue('');
   }
